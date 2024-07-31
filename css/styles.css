@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans";
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem;
+}
+
+.warning-subtitle {
+    font-size: 20px;
+    color: #525252;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-weight: 100;
+}
+
+#construction-png{
+    height: 180px;
+    width: 180px;
+}
+#construction-png img{
+    height: 100%;
+    width: 100%;
+}
