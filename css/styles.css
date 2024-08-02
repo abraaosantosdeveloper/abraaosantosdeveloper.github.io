@@ -24,8 +24,8 @@ header {
     align-items: center;
     justify-content: space-between;
     height: 8vh;
-    padding-inline-start: 5rem;
-    padding-inline-end: 5rem;
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;
     background-color: var(--white);
 }
 
