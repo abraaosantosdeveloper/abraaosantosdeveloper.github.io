@@ -68,6 +68,10 @@ header nav ul li a {
     transition: color 0.3s;
 }
 
+.content-wrapper {
+    overflow-x: hidden;
+}
+
 .mobile-menu {
     cursor: pointer;
     display: none;
