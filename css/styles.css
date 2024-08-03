@@ -11,9 +11,11 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: "Open Sans";
-    overflow: hidden;
+    overflow-x: hidden;
     background-color: var(--foundation-white)!important;
 }
+
+/* Header Style */
 
 header {
     position: sticky;
@@ -27,9 +29,8 @@ header {
     padding-inline-start: 2rem;
     padding-inline-end: 2rem;
     background-color: var(--white);
+    box-shadow: .4px .4px 8px var(--gray50);
 }
-
-
 
 header nav {
     height: 100%;
@@ -68,10 +69,16 @@ header nav ul li a {
     transition: color 0.3s;
 }
 
+/* Mobile Style */
+
 @media (min-width: 999px){
     header{
         padding-inline-start: 5rem;
         padding-inline-end: 5rem;
+    }
+    .container-fluid{
+        padding-inline-start: 5rem!important;
+        padding-inline-end: 5rem!important;
     }
 }
 
@@ -139,6 +146,7 @@ header nav ul li a {
     transform: rotate(45deg) translate(-5px, -5px);
 }
 
+/* Main content */
 
 .container {
     display: flex;
@@ -157,6 +165,11 @@ header nav ul li a {
     font-weight: 100;
 }
 
+.title {
+    font-size: 20px;
+    color: var(--shoe-wax);
+}
+
 #construction-png {
     height: 180px;
     width: 180px;
@@ -165,4 +178,58 @@ header nav ul li a {
 #construction-png img {
     height: 100%;
     width: 100%;
+}
+
+.container-fluid {
+    padding: 1rem;
+    padding-inline-start: 2rem!important;
+    padding-inline-end: 2rem!important;
+    margin-bottom: 4rem!important;
+}
+
+/* Footer Style*/
+
+footer {
+    padding-inline-start: 2rem!important;
+    padding-inline-end: 2rem!important;
+    background-color: var(--white);
+    height: 6rem;
+}
+
+footer h6 {
+    color: var(--shoe-wax);
+    font-size: 14px;
+
+}
+
+footer .social-media {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 2rem!important;
+}
+
+footer .container-fluid {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0!important;
+    height: 100%;
+}
+
+footer a img {
+    height: 4vh!important;
+    margin-inline-start: .2rem;
+    margin-inline-end: .2rem;
+}
+
+@media (max-width: 540px) {
+    footer h6 {
+        font-size: 10px;
+    }
+
+    footer .social-media img {
+        height: 3vh!important;
+    }
 }
