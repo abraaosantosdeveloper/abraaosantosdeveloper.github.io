@@ -102,7 +102,7 @@ header nav ul li a {
         width: 0;
         transition: width .3s ease-in;
         overflow: hidden;
-        padding-bottom: 1rem;
+        padding-bottom: 2rem;
     }
 
     .nav-list li {
