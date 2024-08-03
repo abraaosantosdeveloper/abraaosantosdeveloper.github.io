@@ -86,7 +86,7 @@ header nav ul li a {
     .nav-list {
         position: absolute;
         top: 8vh;
-        right: 0;
+        left: 0;
         flex-direction: column;
         align-items: center;
         height: 92vh;
@@ -106,7 +106,7 @@ header nav ul li a {
     }
 
     .nav-list.active {
-        width: 50vw;
+        width: 80vw;
     }
 }
 
