@@ -47,15 +47,16 @@
 
 
     <div class="container-fluid" id="contact">
-        <form>
+        <form id="contact-form" action="https://formspree.io/f/xblroqnk" method="POST">
             <h4>Entre em contato:</h4>
             <div class="form-group" style="display: flex; gap: 2rem;">
-                <input type="text" class="form-control" id="FormControlInput2" placeholder="Seu Nome">
-                <input type="email" class="form-control" id="FormControlInput1" placeholder="endereço@gmail.com">
+                <input type="text" class="form-control" id="FormControlInput2" placeholder="Seu Nome" name="name">
+                <input type="email" class="form-control" id="FormControlInput1" placeholder="endereço@gmail.com" name="_replyto">
             </div>
             <div class="form-group mt-3">
                 <textarea class="form-control" id="FormControlTextarea1" rows="10"
-                    placeholder="Escreva sua mensagem..."></textarea>
+                    placeholder="Escreva sua mensagem..." name="message"></textarea>
+                <button type="submit" class="btn btn-primary mt-3" style="width: 35%; display: block; margin: auto;">Enviar</button>
             </div>
         </form>
     </div>
@@ -75,6 +76,7 @@
 
 
     <script src="./js/mobile-menu.js"></script>
+    <script src="./js/form.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
