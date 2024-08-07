@@ -76,9 +76,9 @@ header nav ul li a {
         padding-inline-start: 5rem;
         padding-inline-end: 5rem;
     }
-    .container-fluid{
-        padding-inline-start: 5rem!important;
-        padding-inline-end: 5rem!important;
+    #contact{
+        padding-inline-start: 5rem;
+        padding-inline-end: 5rem;
     }
 }
 
@@ -182,23 +182,25 @@ header nav ul li a {
 
 .container-fluid {
     padding: 1rem;
-    padding-inline-start: 2rem!important;
-    padding-inline-end: 2rem!important;
-    margin-bottom: 4rem!important;
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;
+    margin-bottom: 4rem;
 }
 
 /* Footer Style*/
 
 footer {
-    padding-inline-start: 2rem!important;
-    padding-inline-end: 2rem!important;
     background-color: var(--white);
     height: 6rem;
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;
 }
 
 footer h6 {
     color: var(--shoe-wax);
     font-size: 14px;
+    padding: 0;
+    margin: 0;
 
 }
 
@@ -207,19 +209,18 @@ footer .social-media {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    margin-right: 2rem!important;
+    margin-right: 2rem;
 }
 
 footer .container-fluid {
     justify-content: space-between;
     display: flex;
     align-items: center;
-    margin-bottom: 0!important;
     height: 100%;
 }
 
 footer a img {
-    height: 4vh!important;
+    height: 4vh;
     margin-inline-start: .2rem;
     margin-inline-end: .2rem;
 }
@@ -230,6 +231,6 @@ footer a img {
     }
 
     footer .social-media img {
-        height: 3vh!important;
+        height: 3vh;
     }
 }
