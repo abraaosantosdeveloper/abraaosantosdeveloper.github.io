@@ -152,17 +152,32 @@ header nav ul li a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-content: center;
     justify-content: center;
     padding: 5rem;
     text-align: center;
+    min-height: 90vh;
+    gap: 2rem;
+}
+
+.warning-container{
+    width: 100%;
+}
+
+h1.warning{
+    margin: 0;
 }
 
 .warning-subtitle {
     font-size: 20px;
     color: #525252;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-style: italic;
     font-weight: 100;
+}
+
+h5.warning-subtitle{
+    color: rgb(0, 178, 119);
 }
 
 .title {
