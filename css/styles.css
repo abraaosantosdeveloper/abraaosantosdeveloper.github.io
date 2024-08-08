@@ -4,6 +4,7 @@
     --shoe-wax: #2c2c2c;
     --foundation-white: #f0f0ff;
     --white: #ffff;
+    --text-success: #00b277;
 }
 
 body {
@@ -177,7 +178,7 @@ h1.warning{
 }
 
 h5.warning-subtitle{
-    color: rgb(0, 178, 119);
+    color: var(--text-success);
 }
 
 .title {
