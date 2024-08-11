@@ -1,5 +1,12 @@
 # Abraão Santos - Portfólio
 
+## Novidades:
+
+* **Nova seção adicionada:** Início com título e subtitulo, Imagem de perfil.
+* **Mudança nos Estilos:** Como se trata de um site com diversos componentes diferentes, ainda que
+com algum padrão entre alguns deles, cada um tem seu próprio arquivo CSS contendo atributos especificos.
+Os atributos reutilizáveis são mantidos em elementos que partilham de tais atributos e/ou parâmetros.
+
 ## Sobre este projeto:
 
 O presente site trata-se do meu portfólio, onde hospedarei projetos nos quais trabalhei. 

@@ -1,0 +1,39 @@
+#about{
+    height: 100vh;
+    gap: 2rem;
+}
+
+.warning-container{
+    width: 100%;
+}
+
+h1.warning{
+    margin: 0;
+}
+
+.warning-subtitle {
+    font-size: 20px;
+    color: #464646;
+    margin-bottom: 10px;
+    font-style: italic;
+    font-weight: 200;
+}
+
+h5.warning-subtitle{
+    color: var(--text-success);
+}
+
+.title {
+    font-size: 20px;
+    color: var(--shoe-wax);
+}
+
+#construction-png {
+    height: 180px;
+    width: 180px;
+}
+
+#construction-png img {
+    height: 100%;
+    width: 100%;
+}
