@@ -149,19 +149,6 @@ header nav ul li a {
     transform: rotate(45deg) translate(-5px, -5px);
 }
 
-
-#construction-png img {
-    height: 100%;
-    width: 100%;
-}
-
-.container-fluid {
-    padding: 1rem;
-    padding-inline-start: 2rem;
-    padding-inline-end: 2rem;
-    margin-bottom: 4rem;
-}
-
 /* Footer Style*/
 
 footer {

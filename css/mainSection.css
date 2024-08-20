@@ -20,6 +20,19 @@
     margin: 0;
 
 }
+
+#construction-png img {
+    height: 100%;
+    width: 100%;
+}
+
+.container-fluid {
+    padding: 1rem;
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;
+    margin-bottom: 4rem;
+}
+
 .titleName > h1 {
     font-size: 40px;
     letter-spacing: 2px;
@@ -46,6 +59,12 @@
 #buttonGetStarted{
     width: 12rem;
     padding: .5rem;
+    transition: background .3s ease;
+}
+
+#buttonGetStarted:hover{
+    background-color: var(--foundation-white);
+    color: var(--shoe-wax);
 }
 
 @media (max-width: 999px) {
