@@ -40,3 +40,65 @@ const mobileNavbar = new MobileNavbar(
 );
 
 mobileNavbar.init();
+
+
+document.getElementById('home-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+
+    // Get the target element (the #about section)
+    const target = document.getElementById('home');
+
+    // Calculate the offset to scroll to, ensuring it's not too close to the top
+    const offset = target.offsetTop - 100; // Adjust the offset as needed
+
+    // Scroll to the target with a smooth animation
+    window.scrollTo({
+        top: offset,
+        behavior: 'smooth'
+    });
+});
+document.getElementById('about-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+
+    // Get the target element (the #about section)
+    const target = document.getElementById('about');
+
+    // Calculate the offset to scroll to, ensuring it's not too close to the top
+    const offset = target.offsetTop - 50; // Adjust the offset as needed
+
+    // Scroll to the target with a smooth animation
+    window.scrollTo({
+        top: offset,
+        behavior: 'smooth'
+    });
+});
+document.getElementById('portfolio-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+
+    // Get the target element (the #about section)
+    const target = document.getElementById('portfolio');
+
+    // Calculate the offset to scroll to, ensuring it's not too close to the top
+    const offset = target.offsetTop - 50; // Adjust the offset as needed
+
+    // Scroll to the target with a smooth animation
+    window.scrollTo({
+        top: offset,
+        behavior: 'smooth'
+    });
+});
+document.getElementById('contact-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+
+    // Get the target element (the #about section)
+    const target = document.getElementById('contact');
+
+    // Calculate the offset to scroll to, ensuring it's not too close to the top
+    const offset = target.offsetTop - 50; // Adjust the offset as needed
+
+    // Scroll to the target with a smooth animation
+    window.scrollTo({
+        top: offset,
+        behavior: 'smooth'
+    });
+});

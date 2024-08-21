@@ -2,10 +2,23 @@
 
 ## Novidades:
 
-## **Novo visual!** 
-* **Tailwind implementado** - Novo formulário, algumas alterações nos estilos e interface mais moderna. 
+## **Novo visual** 
+* **Tailwind implementado** : Novo formulário, algumas alterações nos estilos e interface mais moderna. 
 **em 21/08/2024 - 00:00**
 ---
+## **Arquivo Disponível para Download**
+* **Currículo para download** : Com a implementação do tailwind, algumas seções do site oferecem novos recursos, entre eles a opção de download de arquivo pdf diretamente no site.
+**em 21/08/2024 - 00:46**
+---
+## **Aprimoramentos no JavaScript**
+* **Scroll behavior** : Para a correção de alguns bugs relativos ao scroll, que interferia na visualização completa de algumas divs ao clicar nos seus respectivos links, foi implementada uma nova solução no arquivo JavaScript para corrigir o problema.
+**em 21/08/2024 - 00:46**
+---
+
+### Sobre o horário de atualizações: 
+* As datas listadas nas atualizações futuras correspondem ao horário de edição do código fonte, e não da publicação do site, que por sua vez depende do tempo para concluir o deploy pela plataforma do github.
+--- 
+
 * **Nova seção adicionada:** Início com título e subtitulo, Imagem de perfil.
 * **Mudança nos Estilos:** Como se trata de um site com diversos componentes diferentes, ainda que
 com algum padrão entre alguns deles, cada um tem seu próprio arquivo CSS contendo atributos especificos.
