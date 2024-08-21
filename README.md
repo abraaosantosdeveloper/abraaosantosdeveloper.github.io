@@ -2,6 +2,10 @@
 
 ## Novidades:
 
+## **Novo visual!** 
+* **Tailwind implementado** - Novo formulário, algumas alterações nos estilos e interface mais moderna. 
+**em 21/08/2024 - 00:00**
+---
 * **Nova seção adicionada:** Início com título e subtitulo, Imagem de perfil.
 * **Mudança nos Estilos:** Como se trata de um site com diversos componentes diferentes, ainda que
 com algum padrão entre alguns deles, cada um tem seu próprio arquivo CSS contendo atributos especificos.
