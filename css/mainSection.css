@@ -117,3 +117,7 @@
         opacity: 1;
     }
 }
+
+#about{
+    height: auto!important;
+}
