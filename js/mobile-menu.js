@@ -72,6 +72,21 @@ document.getElementById('about-link').addEventListener('click', function(event) 
         behavior: 'smooth'
     });
 });
+document.getElementById('buttonGetStarted').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+
+    // Get the target element (the #about section)
+    const target = document.getElementById('about');
+
+    // Calculate the offset to scroll to, ensuring it's not too close to the top
+    const offset = target.offsetTop - 50; // Adjust the offset as needed
+
+    // Scroll to the target with a smooth animation
+    window.scrollTo({
+        top: offset,
+        behavior: 'smooth'
+    });
+});
 document.getElementById('portfolio-link').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent default link behavior
 
