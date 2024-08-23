@@ -95,14 +95,14 @@ header nav ul li a {
     height: 2px;
     background-color: var(--shoe-wax);
     margin: 6px;
-    transition: transform 0.3s;
+    transition: all 0.3s;
 }
 
 @media (max-width: 999px) {
     .nav-list {
         position: absolute;
         top: 8vh;
-        right: 0;
+        left: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
