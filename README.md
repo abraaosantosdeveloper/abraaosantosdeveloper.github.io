@@ -11,7 +11,7 @@
 **em 21/08/2024 - 00:46**
 ---
 ## **Aprimoramentos no JavaScript**
-* **Scroll behavior** : Para a correção de alguns bugs relativos ao scroll, que interferia na visualização completa de algumas divs ao clicar nos seus respectivos links, foi implementada uma nova solução no arquivo JavaScript para corrigir o problema.
+* **Scroll behavior** : Para a correção de alguns bugs relativos ao scroll, que interferiam na visualização completa de algumas divs ao clicar nos seus respectivos links, foi implementada uma nova solução no arquivo JavaScript para corrigir o problema.
 **em 21/08/2024 - 00:46**
 ---
 
