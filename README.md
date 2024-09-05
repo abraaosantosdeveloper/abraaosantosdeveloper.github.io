@@ -2,13 +2,10 @@
 
 ## Novidades:
 
+
 ## **Nova seção de projetos** 
 * **Uma seção em estilo de blog com os principais projetos** : As páginas em questão estarão no ar muito em breve, e logo as publicarei na página; estou ansioso para o realizar. 
 **em 04/09/2024 - 23:03**
----
-## **Novo visual** 
-* **Tailwind implementado** : Novo formulário, algumas alterações nos estilos e interface mais moderna. 
-**em 21/08/2024 - 00:00**
 ---
 ## **Arquivo Disponível para Download**
 * **Currículo para download** : Com a implementação do tailwind, algumas seções do site oferecem novos recursos, entre eles a opção de download de arquivo pdf diretamente no site.
@@ -17,6 +14,11 @@
 ## **Aprimoramentos no JavaScript**
 * **Scroll behavior** : Para a correção de alguns bugs relativos ao scroll, que interferiam na visualização completa de algumas divs ao clicar nos seus respectivos links, foi implementada uma nova solução no arquivo JavaScript para corrigir o problema.
 **em 21/08/2024 - 00:46**
+---
+
+## **Novo visual** 
+* **Tailwind implementado** : Novo formulário, algumas alterações nos estilos e interface mais moderna. 
+**em 21/08/2024 - 00:00**
 ---
 
 ### Sobre o horário de atualizações: 
