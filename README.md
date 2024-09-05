@@ -2,6 +2,10 @@
 
 ## Novidades:
 
+## **Nova seção de projetos** 
+* **Uma seção em estilo de blog com os principais projetos** : As páginas em questão estarão no ar muito em breve, e logo as publicarei na página; estou ansioso para o realizar. 
+**em 04/09/2024 - 23:03**
+---
 ## **Novo visual** 
 * **Tailwind implementado** : Novo formulário, algumas alterações nos estilos e interface mais moderna. 
 **em 21/08/2024 - 00:00**
