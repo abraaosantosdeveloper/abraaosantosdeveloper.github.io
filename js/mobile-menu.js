@@ -94,7 +94,7 @@ document.getElementById('portfolio-link').addEventListener('click', function(eve
     const target = document.getElementById('portfolio');
 
     // Calculate the offset to scroll to, ensuring it's not too close to the top
-    const offset = target.offsetTop - 50; // Adjust the offset as needed
+    const offset = target.offsetTop - 20; // Adjust the offset as needed
 
     // Scroll to the target with a smooth animation
     window.scrollTo({
