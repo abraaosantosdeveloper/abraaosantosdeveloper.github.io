@@ -67,11 +67,13 @@
     width: 12rem;
     padding: .5rem;
     transition: background .3s ease;
+    border: 2px solid var(--shoe-wax);
 }
 
 #buttonGetStarted:hover{
     background-color: var(--foundation-white);
     color: var(--shoe-wax);
+    box-shadow: 0 0 10px #00000071;
 }
 
 @media (max-width: 999px) {
