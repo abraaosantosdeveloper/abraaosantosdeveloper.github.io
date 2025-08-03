@@ -33,13 +33,12 @@
 .titleName > h1 {
     display: inline-block;
     position: relative;
-    min-width: 353.58px;
     width: 100%;
     font-size: 40px;
     letter-spacing: 2px;
     margin: 0;
-    overflow: hidden;
-    white-space: nowrap;
+    word-wrap: break-word;
+    white-space: normal;
 }
 .name {
     position: relative;
@@ -82,6 +81,20 @@
         gap: 2rem;
         animation: opacityAnimate 2s ease;
     }
+    .titleName > h1 {
+        font-size: 32px;
+        min-width: unset;
+        padding: 0 1rem;
+    }
+
+    .container-fluid {
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .titleName {
+        width: 100%;
+    }
 }
 @media (min-width: 999px) {
     #mainSection {
@@ -94,6 +107,13 @@
     }
     .profile {
         animation: slideIn 1s ease-in;
+    }
+}
+
+@media (max-width: 480px) {
+    .titleName > h1 {
+        font-size: 28px;
+        letter-spacing: 1px;
     }
 }
 
