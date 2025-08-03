@@ -75,6 +75,27 @@
     box-shadow: 0 0 10px #00000071;
 }
 
+.project-link {
+    color: var(--shoe-wax);
+    text-decoration: none;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.project-link:hover {
+    color: var(--foundation-white);
+    text-decoration: underline;
+}
+
+.project-description {
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
 @media (max-width: 999px) {
     #mainSection {
         flex-direction: column;
@@ -114,6 +135,16 @@
     .titleName > h1 {
         font-size: 28px;
         letter-spacing: 1px;
+    }
+    
+    .project-link {
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
+    
+    .project-description {
+        font-size: 0.85rem;
+        margin-top: 0.75rem;
     }
 }
 
