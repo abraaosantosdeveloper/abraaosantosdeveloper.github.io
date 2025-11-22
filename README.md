@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💼 Portfólio Abraão Santos
 
-## Getting Started
+Portfólio pessoal desenvolvido para apresentar meus projetos e habilidades como desenvolvedor Full Stack.
 
-First, run the development server:
+## 🚀 Tecnologias Utilizadas
+
+- **Next.js 15** - Framework React para produção
+- **React 19** - Biblioteca JavaScript para interfaces
+- **TypeScript** - Superset JavaScript com tipagem estática
+- **CSS3** - Estilização customizada com variáveis CSS
+- **Boxicons** - Biblioteca de ícones
+- **Google Fonts** - Tipografia (Inter & Fira Code)
+
+## 🎨 Características
+
+- ✨ Design moderno e responsivo
+- 🌓 Modo claro/escuro
+- 🎭 Animações suaves
+- 📱 Mobile-first
+- ⚡ Performance otimizada
+- 🎯 SEO otimizado
+
+## �️ Instalação e Uso
 
 ```bash
+# Instalar dependências
+npm install
+
+# Executar em desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Criar build de produção
+npm run build
+
+# Executar build de produção
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📂 Estrutura do Projeto
 
-## Learn More
+```
+abraao-portfolio/
+├── app/                    # App Router do Next.js
+│   ├── globals.css        # Estilos globais
+│   ├── layout.tsx         # Layout principal
+│   ├── page.tsx           # Página inicial
+│   └── styles.css         # Estilos customizados
+├── components/            # Componentes React
+│   ├── Header.tsx         # Cabeçalho/Navegação
+│   ├── Hero.tsx           # Seção hero
+│   ├── About.tsx          # Sobre mim
+│   ├── Projects.tsx       # Projetos
+│   ├── Contact.tsx        # Contato
+│   └── Footer.tsx         # Rodapé
+├── public/                # Arquivos estáticos
+│   ├── img/              # Imagens
+│   └── favicon.svg       # Favicon
+└── README.md             # Este arquivo
+```
 
-To learn more about Next.js, take a look at the following resources:
+## � Contato
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Email:** abraaofilipi12@gmail.com
+- **Telefone:** +55 (81) 9 9441-8409
+- **LinkedIn:** [abraaosantosdev](https://www.linkedin.com/in/abraaosantosdev/)
+- **GitHub:** [@abraaosantosdeveloper](https://github.com/abraaosantosdeveloper)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📄 Licença
 
-## Deploy on Vercel
+Este projeto é de código aberto e está disponível sob a licença MIT.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Desenvolvido com 💚 por Abraão Santos
