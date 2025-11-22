@@ -505,12 +505,13 @@ button {
   transition: all var(--transition-normal);
   display: flex;
   flex-direction: column;
-  
+
 }
 
 .project__card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px var(--shadow-color);
+  
 }
 
 .project__image {
