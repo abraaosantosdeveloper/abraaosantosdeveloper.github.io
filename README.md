@@ -26,6 +26,12 @@ Portfólio pessoal desenvolvido para apresentar meus projetos e habilidades como
 # Instalar dependências
 npm install
 
+# Copiar arquivo de exemplo das variáveis de ambiente
+cp .env.example .env.local
+
+# Editar .env.local e adicionar seu Formspree ID
+# NEXT_PUBLIC_FORMSPREE_ID=seu_id_aqui
+
 # Executar em desenvolvimento
 npm run dev
 
@@ -35,6 +41,31 @@ npm run build
 # Executar build de produção
 npm start
 ```
+
+## ⚙️ Configuração
+
+### Variáveis de Ambiente
+
+Crie um arquivo `.env.local` na raiz do projeto:
+
+```bash
+# Formspree ID (obrigatório para o formulário de contato)
+NEXT_PUBLIC_FORMSPREE_ID=seu_formspree_id
+```
+
+**Como obter o Formspree ID:**
+1. Crie uma conta em [formspree.io](https://formspree.io)
+2. Crie um novo formulário
+3. Copie apenas o ID da URL (ex: se a URL for `https://formspree.io/f/abcd1234`, use apenas `abcd1234`)
+
+### GitHub Pages com Variáveis de Ambiente
+
+Para configurar no GitHub:
+1. Vá em `Settings` → `Secrets and variables` → `Actions`
+2. Clique em `New repository secret`
+3. Nome: `NEXT_PUBLIC_FORMSPREE_ID`
+4. Valor: seu ID do Formspree
+5. O workflow do GitHub Actions já está configurado para usar essa variável
 
 
 

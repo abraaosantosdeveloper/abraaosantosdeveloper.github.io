@@ -12,8 +12,17 @@ export default function Contact() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
+    const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+    
+    if (!formspreeId) {
+      console.error('NEXT_PUBLIC_FORMSPREE_ID não está configurado');
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 3000);
+      return;
+    }
+
     try {
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
         method: 'POST',
         body: formData,
         headers: {

@@ -31,6 +31,8 @@ jobs:
         run: npm ci
         
       - name: Build with Next.js
+        env:
+          NEXT_PUBLIC_FORMSPREE_ID: ${{ secrets.NEXT_PUBLIC_FORMSPREE_ID }}
         run: npm run build
         
       - name: Upload artifact
