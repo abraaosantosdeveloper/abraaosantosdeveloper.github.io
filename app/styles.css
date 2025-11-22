@@ -505,6 +505,7 @@ button {
   transition: all var(--transition-normal);
   display: flex;
   flex-direction: column;
+  
 }
 
 .project__card:hover {
