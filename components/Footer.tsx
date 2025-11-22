@@ -31,7 +31,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/in/abraao-santos-developer/" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.linkedin.com/in/abraaosantosdev/" target="_blank" rel="noopener noreferrer">
                     <i className='bx bxl-linkedin'></i> LinkedIn
                   </a>
                 </li>

@@ -8,7 +8,11 @@ export const metadata: Metadata = {
   keywords: ["Desenvolvedor", "Full Stack", "JavaScript", "React", "Next.js", "Python", "Flask", "PostgreSQL"],
   authors: [{ name: "Abraão Santos" }],
   icons: {
-    icon: '/favicon.svg',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
   },
   openGraph: {
     title: "Abraão Santos | Desenvolvedor Full Stack",
