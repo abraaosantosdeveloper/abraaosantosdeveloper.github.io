@@ -30,6 +30,10 @@ export default function Projects() {
                   <i className='bx bx-link-external'></i>
                   Acessar
                 </a>
+                <a href="https://github.com/abraaosantosdeveloper/easy-weather" target="_blank" rel="noopener noreferrer" className="btn btn--small btn--secondary">
+                  <i className='bx bxl-github'></i>
+                  Código
+                </a>
               </div>
             </div>
           </article>
@@ -55,6 +59,10 @@ export default function Projects() {
                 <a href="https://abraaosantosdeveloper.github.io/oasis_app/landing.html" target="_blank" rel="noopener noreferrer" className="btn btn--small btn--primary">
                   <i className='bx bx-link-external'></i>
                   Acessar
+                </a>
+                <a href="https://github.com/abraaosantosdeveloper/oasis_app" target="_blank" rel="noopener noreferrer" className="btn btn--small btn--secondary">
+                  <i className='bx bxl-github'></i>
+                  Código
                 </a>
               </div>
             </div>
