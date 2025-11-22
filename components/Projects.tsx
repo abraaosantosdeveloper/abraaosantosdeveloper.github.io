@@ -26,7 +26,7 @@ export default function Projects() {
                 <span className="tag">API</span>
               </div>
               <div className="project__buttons">
-                <a href="https://easy-weather-alpha.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn btn--small btn--primary">
+                <a href="https://abraaosantosdeveloper.github.io/easy-weather" target="_blank" rel="noopener noreferrer" className="btn btn--small btn--primary">
                   <i className='bx bx-link-external'></i>
                   Acessar
                 </a>
