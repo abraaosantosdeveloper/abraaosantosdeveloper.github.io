@@ -399,7 +399,7 @@ button {
 .about__blob {
   width: 100%;
   aspect-ratio: 3/4;
-  border-radius: var(--border-radius-lg);
+  border-radius: var(--border-radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -431,12 +431,14 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 0.5rem;
   padding: 1rem;
   background: var(--bg-color-alt);
   border-radius: var(--border-radius-md);
   border: 2px solid var(--border-color);
   transition: all var(--transition-normal);
+  min-height: 100px;
 }
 
 .skill:hover {

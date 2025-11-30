@@ -19,15 +19,21 @@ export default function Hero() {
           </div>
         </div>
         <div className="hero__image">
-          <div className="hero__blob">
+          <div style={{ 
+            width: '380px', 
+            height: '380px', 
+            borderRadius: '50%', 
+            overflow: 'hidden',
+            position: 'relative',
+            boxShadow: '0 5px 30px rgba(0, 0, 0, 0.37)'
+          }}>
             <Image 
-              src="/img/coding.png?v=2" 
-              alt="Coding illustration"
-              width={300}
-              height={300}
-              className="hero__img"
+              src="/img/profile.jpg" 
+              alt="Abraão Santos"
+              width={380}
+              height={380}
+              style={{ objectFit: 'cover'}}
               priority
-              unoptimized
             />
           </div>
         </div>

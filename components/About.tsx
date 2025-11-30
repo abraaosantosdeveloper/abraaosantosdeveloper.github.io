@@ -13,7 +13,7 @@ export default function About() {
           <div className="about__image">
             <div className="about__blob">
               <Image 
-                src="/img/Profile.jpg" 
+                src="/img/profile-about.jpg" 
                 alt="Abraão Santos"
                 width={400}
                 height={400}
@@ -59,8 +59,32 @@ export default function About() {
                 <span>Git</span>
               </div>
               <div className="skill">
+                <i className='bx bxl-github'></i>
+                <span>GitHub</span>
+              </div>
+              <div className="skill">
                 <i className='bx bxl-postgresql'></i>
                 <span>PostgreSQL</span>
+              </div>
+              <div className="skill">
+                <i className='bx bxs-data'></i>
+                <span>MySQL</span>
+              </div>
+              <div className="skill">
+                <Image src="/azure.png" alt="Azure" width={24} height={24} />
+                <span>Azure</span>
+              </div>
+              <div className="skill">
+                <i className='bx bxl-java'></i>
+                <span>Java</span>
+              </div>
+              <div className="skill">
+                <i className='bx bxl-spring-boot'></i>
+                <span>Spring Boot</span>
+              </div>
+              <div className="skill">
+                <i className='bx bxl-c-plus-plus'></i>
+                <span>C/C++</span>
               </div>
             </div>
 
