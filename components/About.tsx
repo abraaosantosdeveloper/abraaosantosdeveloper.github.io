@@ -71,11 +71,11 @@ export default function About() {
                 <span>MySQL</span>
               </div>
               <div className="skill">
-                <Image src="/azure.png" alt="Azure" width={32} height={32} />
+                <Image src="/azure.png" alt="Azure" width={36} height={36} />
                 <span>Azure</span>
               </div>
               <div className="skill">
-                <i className='bx bxl-java' id='java-skill'></i>
+                <i className='bx bxl-java'></i>
                 <span>Java</span>
               </div>
               <div className="skill">
