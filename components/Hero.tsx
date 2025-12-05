@@ -20,8 +20,8 @@ export default function Hero() {
         </div>
         <div className="hero__image">
           <div style={{ 
-            width: '380px', 
-            height: '380px', 
+            width: '340px', 
+            height: '340px', 
             borderRadius: '50%', 
             overflow: 'hidden',
             position: 'relative',
@@ -30,8 +30,8 @@ export default function Hero() {
             <Image 
               src="/img/profile.jpg" 
               alt="Abraão Santos"
-              width={380}
-              height={380}
+              width={340}
+              height={340}
               style={{ objectFit: 'cover'}}
               priority
             />
