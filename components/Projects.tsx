@@ -16,7 +16,7 @@ export default function Projects() {
             <div className="project__data">
               <h3 className="project__title">EasyWeather</h3>
               <p className="project__description">
-                Aplicação de previsão do tempo que utiliza APIs para fornecer dados meteorológicos 
+                Aplicação de previsão do tempo que utiliza APIs para fornecer dados meteorológicos
                 em tempo real de qualquer cidade do mundo.
               </p>
               <div className="project__tags">
@@ -46,7 +46,7 @@ export default function Projects() {
             <div className="project__data">
               <h3 className="project__title">Oasis App</h3>
               <p className="project__description">
-                Aplicação completa para rastreamento de hábitos e bem-estar pessoal, 
+                Aplicação completa para rastreamento de hábitos e bem-estar pessoal,
                 com sistema de autenticação e dashboard interativo.
               </p>
               <div className="project__tags">
@@ -68,6 +68,36 @@ export default function Projects() {
             </div>
           </article>
 
+          {/* Quick List Project */}
+          <article className="project__card">
+            <div className="project__image">
+              <i className='bx bx-list-check'></i>
+            </div>
+            <div className="project__data">
+              <h3 className="project__title">Quick List</h3>
+              <p className="project__description">
+                Lista de tarefas simples e objetiva criada em contexto acadêmico,
+                com persistência de dados via LocalStorage utilizando tecnologias web tradicionais.
+              </p>
+              <div className="project__tags">
+                <span className="tag">HTML</span>
+                <span className="tag">CSS</span>
+                <span className="tag">JavaScript</span>
+                <span className="tag">LocalStorage</span>
+              </div>
+              <div className="project__buttons">
+                <a href="https://abraaosantosdeveloper.github.io/quick-list/" target="_blank" rel="noopener noreferrer" className="btn btn--small btn--primary">
+                  <i className='bx bx-link-external'></i>
+                  Acessar
+                </a>
+                <a href="https://github.com/abraaosantosdeveloper/quick-list" target="_blank" rel="noopener noreferrer" className="btn btn--small btn--secondary">
+                  <i className='bx bxl-github'></i>
+                  Código
+                </a>
+              </div>
+            </div>
+          </article>
+
           {/* Coming Soon Project */}
           <article className="project__card project__card--coming">
             <div className="project__image">
@@ -76,7 +106,7 @@ export default function Projects() {
             <div className="project__data">
               <h3 className="project__title">Em Breve</h3>
               <p className="project__description">
-                Novos projetos incríveis estão a caminho! Fique ligado para ver 
+                Novos projetos incríveis estão a caminho! Fique ligado para ver
                 as próximas soluções que estou desenvolvendo.
               </p>
               <div className="project__tags">
