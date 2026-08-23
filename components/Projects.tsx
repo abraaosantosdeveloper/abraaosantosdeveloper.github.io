@@ -98,6 +98,36 @@ export default function Projects() {
             </div>
           </article>
 
+          {/* Rotina em Pauta Project */}
+          <article className="project__card">
+            <div className="project__image">
+              <i className='bx bx-calendar-check'></i>
+            </div>
+            <div className="project__data">
+              <h3 className="project__title">Rotina em Pauta</h3>
+              <p className="project__description">
+                Aplicação focada em organização de rotina e planejamento diário,
+                com interface intuitiva para facilitar o acompanhamento de tarefas.
+              </p>
+              <div className="project__tags">
+                <span className="tag">HTML</span>
+                <span className="tag">CSS</span>
+                <span className="tag">JavaScript</span>
+                <span className="tag">Produtividade</span>
+              </div>
+              <div className="project__buttons">
+                <a href="https://abraaosantosdeveloper.github.io/rotina-em-pauta/" target="_blank" rel="noopener noreferrer" className="btn btn--small btn--primary">
+                  <i className='bx bx-link-external'></i>
+                  Acessar
+                </a>
+                <a href="https://github.com/abraaosantosdeveloper/rotina-em-pauta/" target="_blank" rel="noopener noreferrer" className="btn btn--small btn--secondary">
+                  <i className='bx bxl-github'></i>
+                  Código
+                </a>
+              </div>
+            </div>
+          </article>
+
           {/* Coming Soon Project */}
           <article className="project__card project__card--coming">
             <div className="project__image">
