@@ -16,7 +16,8 @@ type Project = {
 const projects: Project[] = [
   {
     title: 'Blabry',
-    description: 'Rede social com foco em atualizações em tempo real e aprendizado contínuo.',
+    description:
+      'Uma rede social pensada para quem deseja estar por dentro, e não somente postar. De uma vaga perdida, a projeto pessoal e processo de aprendizagem.',
     icon: 'bx-chat',
     tags: ['Node', 'React', 'SSE', 'WebSockets'],
     appUrl: 'https://blabry.com.br/',
@@ -66,7 +67,8 @@ const projects: Project[] = [
 
 export default function Projects() {
   const trackRef = useRef<HTMLDivElement>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activePage, setActivePage] = useState(0);
+  const [pageStartIndexes, setPageStartIndexes] = useState<number[]>([0]);
 
   const getCards = useCallback(() => {
     const track = trackRef.current;
@@ -74,29 +76,54 @@ export default function Projects() {
     return Array.from(track.querySelectorAll<HTMLElement>('.project__card'));
   }, []);
 
-  const updateActiveIndex = useCallback(() => {
+  const updateCarouselState = useCallback(() => {
     const track = trackRef.current;
     if (!track) return;
     const cards = getCards();
     if (cards.length === 0) return;
 
-    let nextIndex = 0;
-    let closest = Number.POSITIVE_INFINITY;
-    for (let index = 0; index < cards.length; index += 1) {
-      const distance = Math.abs(track.scrollLeft - cards[index].offsetLeft);
-      if (distance < closest) {
-        closest = distance;
-        nextIndex = index;
+    const nextPageStartIndexes = [0];
+    let currentPageStart = 0;
+    for (let index = 1; index < cards.length; index += 1) {
+      const pageStartCard = cards[currentPageStart];
+      const currentCard = cards[index];
+      const currentCardRightEdge = currentCard.offsetLeft + currentCard.offsetWidth;
+      const pageWidth = currentCardRightEdge - pageStartCard.offsetLeft;
+
+      if (pageWidth > track.clientWidth + 1) {
+        nextPageStartIndexes.push(index);
+        currentPageStart = index;
       }
     }
 
-    setActiveIndex(nextIndex);
+    setPageStartIndexes((prevPageStartIndexes) => {
+      if (
+        prevPageStartIndexes.length === nextPageStartIndexes.length &&
+        prevPageStartIndexes.every((value, index) => value === nextPageStartIndexes[index])
+      ) {
+        return prevPageStartIndexes;
+      }
+      return nextPageStartIndexes;
+    });
+
+    let nextPage = 0;
+    let closest = Number.POSITIVE_INFINITY;
+    for (let pageIndex = 0; pageIndex < nextPageStartIndexes.length; pageIndex += 1) {
+      const pageStartIndex = nextPageStartIndexes[pageIndex];
+      const distance = Math.abs(track.scrollLeft - cards[pageStartIndex].offsetLeft);
+      if (distance < closest) {
+        closest = distance;
+        nextPage = pageIndex;
+      }
+    }
+
+    setActivePage(nextPage);
   }, [getCards]);
 
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
-    const onScroll = () => updateActiveIndex();
+    const onScroll = () => updateCarouselState();
     track.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
     onScroll();
@@ -104,36 +131,36 @@ export default function Projects() {
       track.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
     };
-  }, [updateActiveIndex]);
+  }, [updateCarouselState]);
 
-  const canGoPrev = activeIndex > 0;
-  const canGoNext = activeIndex < projects.length - 1;
+  const canGoPrev = activePage > 0;
+  const canGoNext = activePage < pageStartIndexes.length - 1;
 
-  const scrollToIndex = useCallback((index: number) => {
+  const scrollToPage = useCallback((pageIndex: number) => {
     const track = trackRef.current;
     if (!track) return;
     const cards = getCards();
-    const targetCard = cards[index];
+    const targetCard = cards[pageStartIndexes[pageIndex]];
     if (!targetCard) return;
     track.scrollTo({
       left: targetCard.offsetLeft,
       behavior: 'smooth',
     });
-  }, [getCards]);
+  }, [getCards, pageStartIndexes]);
 
   const projectDots = useMemo(
     () =>
-      projects.map((project, index) => (
+      pageStartIndexes.map((_, pageIndex) => (
         <button
-          key={`${project.title}-dot`}
+          key={`page-${pageIndex + 1}-dot`}
           type="button"
-          className={`project__dot${activeIndex === index ? ' project__dot--active' : ''}`}
-          aria-label={`Ir para projeto ${project.title}`}
-          onClick={() => scrollToIndex(index)}
-          aria-current={activeIndex === index ? 'true' : undefined}
+          className={`project__dot${activePage === pageIndex ? ' project__dot--active' : ''}`}
+          aria-label={`Ir para página ${pageIndex + 1} dos projetos`}
+          onClick={() => scrollToPage(pageIndex)}
+          aria-current={activePage === pageIndex ? 'true' : undefined}
         />
       )),
-    [activeIndex, scrollToIndex]
+    [activePage, pageStartIndexes, scrollToPage]
   );
 
   return (
@@ -149,7 +176,7 @@ export default function Projects() {
             type="button"
             className="projects__nav projects__nav--prev"
             aria-label="Projeto anterior"
-            onClick={() => scrollToIndex(Math.max(0, activeIndex - 1))}
+            onClick={() => scrollToPage(Math.max(0, activePage - 1))}
             disabled={!canGoPrev}
           >
             <i className="bx bx-chevron-left"></i>
@@ -165,7 +192,7 @@ export default function Projects() {
                   <i className={`bx ${project.icon}`}></i>
                 </div>
                 <div className="project__data">
-                  {project.isNew ? <span className="project__badge">Novidade</span> : null}
+                  {project.isNew ? <span className="project__badge project__badge--pulse">Novidade</span> : null}
                   <h3 className="project__title">{project.title}</h3>
                   <p className="project__description">{project.description}</p>
                   <div className="project__tags">
@@ -206,7 +233,7 @@ export default function Projects() {
             type="button"
             className="projects__nav projects__nav--next"
             aria-label="Próximo projeto"
-            onClick={() => scrollToIndex(Math.min(projects.length - 1, activeIndex + 1))}
+            onClick={() => scrollToPage(Math.min(pageStartIndexes.length - 1, activePage + 1))}
             disabled={!canGoNext}
           >
             <i className="bx bx-chevron-right"></i>
