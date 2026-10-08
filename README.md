@@ -1,6 +1,6 @@
 # 💼 Portfólio Abraão Santos
 
-Portfólio pessoal desenvolvido para apresentar meus projetos e habilidades como desenvolvedor Full Stack.
+Portfólio pessoal desenvolvido para apresentar meus projetos e habilidades como desenvolvedor Back-End, com conhecimentos em front-end e back-end, e foco principal em desenvolvimento back-end.
 
 ## 🚀 Tecnologias Utilizadas
 

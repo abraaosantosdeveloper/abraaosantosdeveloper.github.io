@@ -11,7 +11,7 @@ export default function Hero() {
             <span className="wave">👋</span>
           </h1>
           <p className="hero__description">
-            Desenvolvedor Full Stack apaixonado por criar experiências web incríveis e funcionais
+            Desenvolvedor Back-End com conhecimentos em front-end e back-end, focado em criar soluções robustas e funcionais
           </p>
           <div className="hero__buttons">
             <a href="#projects" className="btn btn--primary">Ver Projetos</a>
