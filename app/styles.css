@@ -585,7 +585,7 @@ button {
 }
 
 .project__image {
-  height: 200px;
+  height: 170px;
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   display: flex;
   align-items: center;
@@ -651,8 +651,29 @@ button {
 
 .project__description {
   color: var(--text-color-light);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   line-height: 1.6;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  min-height: 4.8em;
+}
+
+.project__read-more {
+  background: none;
+  border: none;
+  color: var(--secondary-color);
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  width: fit-content;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.project__read-more:hover {
+  text-decoration: underline;
 }
 
 .project__tags {
@@ -684,6 +705,68 @@ button {
 
 .project__card--coming .project__image {
   background: linear-gradient(135deg, var(--text-color-light), var(--border-color));
+}
+
+.project-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 120;
+}
+
+.project-modal__content {
+  width: min(680px, 100%);
+  max-height: 80vh;
+  background: var(--bg-color);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 40px var(--shadow-color-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.project-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem 0.75rem;
+}
+
+.project-modal__header h3 {
+  font-size: 1.2rem;
+}
+
+.project-modal__close {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--bg-color-alt);
+  color: var(--text-color);
+  font-size: 1.2rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-modal__divider {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  opacity: 0.65;
+}
+
+.project-modal__body {
+  padding: 1rem 1.25rem 1.25rem;
+  color: var(--text-color-light);
+  overflow-y: auto;
+  line-height: 1.7;
 }
 
 /* ===== CONTACT SECTION ===== */
@@ -1078,6 +1161,10 @@ button {
 
   .project__card {
     flex-basis: 100%;
+  }
+
+  .project__image {
+    height: 150px;
   }
 
   .projects__nav {

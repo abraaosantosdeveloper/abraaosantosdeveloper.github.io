@@ -69,6 +69,7 @@ export default function Projects() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [activePage, setActivePage] = useState(0);
   const [pageStartIndexes, setPageStartIndexes] = useState<number[]>([0]);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const getCards = useCallback(() => {
     const track = trackRef.current;
@@ -133,6 +134,24 @@ export default function Projects() {
     };
   }, [updateCarouselState]);
 
+  useEffect(() => {
+    if (!selectedProject) return;
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setSelectedProject(null);
+      }
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', onEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', onEscape);
+    };
+  }, [selectedProject]);
+
   const canGoPrev = activePage > 0;
   const canGoNext = activePage < pageStartIndexes.length - 1;
 
@@ -195,6 +214,9 @@ export default function Projects() {
                   {project.isNew ? <span className="project__badge project__badge--pulse">Novidade</span> : null}
                   <h3 className="project__title">{project.title}</h3>
                   <p className="project__description">{project.description}</p>
+                  <button type="button" className="project__read-more" onClick={() => setSelectedProject(project)}>
+                    Ler mais
+                  </button>
                   <div className="project__tags">
                     {project.tags.map((tag) => (
                       <span key={`${project.title}-${tag}`} className="tag">
@@ -244,6 +266,34 @@ export default function Projects() {
           {projectDots}
         </div>
       </div>
+
+      {selectedProject ? (
+        <div
+          className="project-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="project-modal-title"
+          onClick={() => setSelectedProject(null)}
+        >
+          <div className="project-modal__content" onClick={(event) => event.stopPropagation()}>
+            <div className="project-modal__header">
+              <h3 id="project-modal-title">{selectedProject.title}</h3>
+              <button
+                type="button"
+                className="project-modal__close"
+                onClick={() => setSelectedProject(null)}
+                aria-label="Fechar modal"
+              >
+                ×
+              </button>
+            </div>
+            <hr className="project-modal__divider" />
+            <div className="project-modal__body">
+              <p>{selectedProject.description}</p>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 }
