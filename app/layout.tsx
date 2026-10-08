@@ -3,9 +3,9 @@ import "./globals.css";
 import "./styles.css";
 
 export const metadata: Metadata = {
-  title: "Abraão Santos | Desenvolvedor Full Stack",
-  description: "Portfólio de Abraão Santos - Desenvolvedor Full Stack com experiência em criar soluções web modernas e responsivas.",
-  keywords: ["Desenvolvedor", "Full Stack", "JavaScript", "React", "Next.js", "Python", "Flask", "PostgreSQL"],
+  title: "Abraão Santos | Desenvolvedor Back-End",
+  description: "Portfólio de Abraão Santos - Desenvolvedor Back-End com conhecimentos em front-end e back-end, com foco no desenvolvimento back-end.",
+  keywords: ["Desenvolvedor", "Back-End", "Front-End", "JavaScript", "React", "Next.js", "Python", "Flask", "PostgreSQL"],
   authors: [{ name: "Abraão Santos" }],
   icons: {
     icon: [
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     apple: '/favicon.svg',
   },
   openGraph: {
-    title: "Abraão Santos | Desenvolvedor Full Stack",
-    description: "Portfólio de Abraão Santos - Desenvolvedor Full Stack",
+    title: "Abraão Santos | Desenvolvedor Back-End",
+    description: "Portfólio de Abraão Santos - Desenvolvedor Back-End com foco no desenvolvimento back-end",
     type: "website",
   },
 };

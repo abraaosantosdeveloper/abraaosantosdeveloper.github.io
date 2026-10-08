@@ -25,7 +25,7 @@ export default function About() {
 
           <div className="about__data">
             <p className="about__description">
-              Desenvolvedor Full Stack com experiência em criar soluções web modernas e responsivas. 
+              Desenvolvedor Back-End com conhecimentos em front-end e back-end, com foco no desenvolvimento de soluções escaláveis e eficientes.
               Apaixonado por transformar ideias em produtos digitais que fazem a diferença na vida das pessoas.
             </p>
 

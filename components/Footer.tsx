@@ -8,7 +8,7 @@ export default function Footer() {
               <i className='bx bx-code-alt'></i>
               Abraão.dev
             </h3>
-            <p>Desenvolvedor Full Stack</p>
+            <p>Desenvolvedor Back-End</p>
           </div>
 
           <div className="footer__links">
