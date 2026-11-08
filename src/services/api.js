@@ -2,7 +2,9 @@ import { mockSite } from '../data/mock'
 import { emptySite } from '../data/empty'
 
 const API_URL = String(import.meta.env.VITE_API_URL || '').replace(/\/+$/, '')
-const SOURCE = String(import.meta.env.VITE_DATA_SOURCE || 'mock').toLowerCase()
+const SOURCE = String(
+  import.meta.env.VITE_DATA_SOURCE || (import.meta.env.DEV ? 'mock' : 'api'),
+).toLowerCase()
 
 // ?vazio na URL força o estado vazio, para conferir o design sem mexer no .env
 const forceEmpty = typeof window !== 'undefined'
