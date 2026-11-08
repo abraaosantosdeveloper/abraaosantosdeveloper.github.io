@@ -23,7 +23,7 @@ defineEmits(['open'])
         <li v-reveal class="tl__row tl__row--locked">
           <span class="tl__period mono">em breve</span>
           <div class="tl__rail">
-            <span class="tl__node tl__node--locked" aria-hidden="true"><AppIcon name="lock" /></span>
+            <a href="#contato" class="tl__node tl__node--locked" aria-label="Próxima fase: vamos conversar"><AppIcon name="lock" /></a>
             <span v-if="timeline.phases.length" class="tl__line tl__line--dashed" aria-hidden="true" />
           </div>
           <div class="tl__content tl__content--locked">
@@ -44,7 +44,14 @@ defineEmits(['open'])
         >
           <span class="tl__period mono">{{ formatPeriod(phase) }}</span>
           <div class="tl__rail">
-            <span class="tl__node" aria-hidden="true"><AppIcon :name="phase.kind" /></span>
+            <button
+              type="button"
+              class="tl__node"
+              :aria-label="`Ver detalhes: ${phase.title}`"
+              @click="$emit('open', i)"
+            >
+              <AppIcon :name="phase.kind" />
+            </button>
             <span v-if="i < timeline.phases.length - 1" class="tl__line" aria-hidden="true" />
           </div>
           <div class="tl__content">
@@ -93,13 +100,22 @@ defineEmits(['open'])
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
   background: var(--bg);
   color: var(--accent);
   border: 3px solid var(--accent);
   box-shadow: 0 6px 0 var(--accent-dark);
-  transition: opacity .5s ease, filter .5s ease, transform .5s ease;
+  transition: opacity .5s ease, filter .5s ease, transform .12s ease, box-shadow .12s ease;
 }
 .tl__node :deep(svg) { width: 26px; height: 26px; }
+
+/* É um botão: afunda no hover e no clique, como os ícones dos projetos */
+.tl__node:hover { transform: translateY(3px); box-shadow: 0 3px 0 var(--accent-dark); }
+.tl__node:active { transform: translateY(5px); box-shadow: 0 1px 0 var(--accent-dark); }
+.tl__node:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 50%; }
 
 .tl__row--current .tl__node {
   width: 88px;
@@ -109,6 +125,8 @@ defineEmits(['open'])
   color: var(--on-accent);
   box-shadow: 0 7px 0 var(--accent-dark), 0 0 0 10px var(--accent-soft);
 }
+.tl__row--current .tl__node:hover { box-shadow: 0 4px 0 var(--accent-dark), 0 0 0 10px var(--accent-soft); }
+.tl__row--current .tl__node:active { box-shadow: 0 2px 0 var(--accent-dark), 0 0 0 10px var(--accent-soft); }
 /* halo pulsando na fase atual */
 .tl__row--current .tl__node::after {
   content: '';
@@ -132,6 +150,8 @@ defineEmits(['open'])
   color: var(--muted);
   box-shadow: none;
 }
+.tl__node--locked:hover,
+.tl__node--locked:active { transform: none; box-shadow: none; border-color: var(--accent); color: var(--accent); }
 
 /* ---------- Linhas ---------- */
 .tl__line {
@@ -179,7 +199,7 @@ defineEmits(['open'])
 .tl__cta:hover { text-decoration: underline; }
 
 /* ---------- Animação: fases "desbloqueando" ao rolar ---------- */
-.tl__row.reveal:not(.is-visible) .tl__node { opacity: .35; filter: grayscale(1); transform: scale(.92); }
+.tl__row.reveal:not(.is-visible) .tl__node { opacity: .35; filter: grayscale(1); }
 .tl__row.reveal:not(.is-visible) .tl__line { transform: scaleY(0); }
 .tl__row.reveal .tl__card { transition: opacity .6s ease .1s, transform .6s ease .1s; }
 .tl__row.reveal:not(.is-visible) .tl__card,
@@ -197,10 +217,16 @@ defineEmits(['open'])
   .tl__period { display: none; }
 
   .tl__node { width: 50px; height: 50px; box-shadow: 0 4px 0 var(--accent-dark); }
+  .tl__node:hover { transform: none; box-shadow: 0 4px 0 var(--accent-dark); }
+  .tl__node:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--accent-dark); }
   .tl__node :deep(svg) { width: 20px; height: 20px; }
-  .tl__row--current .tl__node { width: 56px; height: 56px; box-shadow: 0 5px 0 var(--accent-dark), 0 0 0 7px var(--accent-soft); }
+  .tl__row--current .tl__node,
+  .tl__row--current .tl__node:hover { width: 56px; height: 56px; box-shadow: 0 5px 0 var(--accent-dark), 0 0 0 7px var(--accent-soft); }
+  .tl__row--current .tl__node:active { transform: translateY(3px); box-shadow: 0 2px 0 var(--accent-dark), 0 0 0 7px var(--accent-soft); }
   .tl__row--current .tl__node::after { inset: -7px; }
-  .tl__node--locked { width: 52px; height: 52px; box-shadow: none; }
+  .tl__node--locked,
+  .tl__node--locked:hover,
+  .tl__node--locked:active { width: 52px; height: 52px; box-shadow: none; transform: none; }
 
   .tl__line { width: 3px; min-height: 24px; margin: 10px 0 6px; }
   .tl__line--dashed { min-height: 28px; margin: 6px 0; background: repeating-linear-gradient(var(--line) 0 6px, transparent 6px 12px); }
