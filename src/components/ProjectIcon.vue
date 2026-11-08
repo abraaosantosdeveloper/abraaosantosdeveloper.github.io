@@ -1,10 +1,10 @@
 <script setup>
 import { computed } from 'vue'
 import AppIcon from './AppIcon.vue'
-import { projectColor, PROJECT_ICONS, DEFAULT_ICON } from '../data/catalog'
+import { projectColor, PROJECT_ICONS, UI_ICONS, DEFAULT_ICON } from '../data/catalog'
 
-// Ícone-botão do projeto: quadrado arredondado com a sombra 3D da cor escolhida.
-// Tamanhos do design: 64 (desktop) e 52 (celular).
+// Ícone-botão: quadrado arredondado com a sombra 3D da cor escolhida.
+// Projetos: 64 (desktop) e 52 (celular). Categorias da stack: 44 e 40.
 const props = defineProps({
   icon: { type: String, default: '' },
   color: { type: String, default: '' },
@@ -12,10 +12,11 @@ const props = defineProps({
 })
 
 const palette = computed(() => projectColor(props.color))
-const iconName = computed(() => (PROJECT_ICONS[props.icon] ? props.icon : DEFAULT_ICON))
-const radius = computed(() => (props.size >= 60 ? 18 : props.size >= 56 ? 16 : 15))
-const depth = computed(() => (props.size >= 60 ? 6 : 5))
-const glyph = computed(() => (props.size >= 60 ? 30 : 24))
+const iconName = computed(() => (PROJECT_ICONS[props.icon] || UI_ICONS[props.icon] ? props.icon : DEFAULT_ICON))
+// Proporções do design: 64 → raio 18 / sombra 6 / ícone 30; 52 → 15 / 5 / 24
+const radius = computed(() => Math.round(props.size * 0.28))
+const depth = computed(() => (props.size >= 60 ? 6 : props.size >= 48 ? 5 : 4))
+const glyph = computed(() => Math.round(props.size * 0.47))
 </script>
 
 <template>

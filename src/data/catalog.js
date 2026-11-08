@@ -25,6 +25,9 @@ export const UI_ICONS = {
   lock: 'M7 11h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2z M8 11V8a4 4 0 0 1 8 0v3',
   wrench: 'M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z',
   close: 'M6 6l12 12 M18 6 6 18',
+  // stack
+  server: 'M5 4h14a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z M5 13h14a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1z M8 7.5h.01 M8 16.5h.01',
+  cloud: 'M17.5 19H7a5 5 0 1 1 1.2-9.86A6 6 0 0 1 19.6 11a4 4 0 0 1-2.1 8z',
   menu: 'M4 8h16 M4 16h16',
 }
 
@@ -50,4 +53,23 @@ export function projectIconPath(id) {
 
 export function projectColor(id) {
   return PROJECT_COLORS[id] || PROJECT_COLORS[DEFAULT_COLOR]
+}
+
+// Ícone e cor de cada categoria da stack, pelo título (a API só manda o título).
+// Categorias novas que não batem com nenhuma regra recebem cores em rodízio.
+const STACK_RULES = [
+  [/lingu/i, 'code', 'menta-2'],
+  [/back|api|servidor/i, 'server', 'azul-2'],
+  [/dado|banco|data/i, 'database', 'lilas-2'],
+  [/infra|ferrament|devops|cloud|nuvem/i, 'cloud', 'ambar-2'],
+  [/front|web|interface/i, 'globe', 'coral-2'],
+  [/test|qualidade/i, 'shield', 'teal-2'],
+]
+const STACK_ROTATION = ['menta-2', 'azul-2', 'lilas-2', 'ambar-2', 'coral-2', 'teal-2']
+
+export function stackCategoryStyle(title, index) {
+  const rule = STACK_RULES.find(([re]) => re.test(title || ''))
+  const icon = rule ? rule[1] : 'code'
+  const color = rule ? rule[2] : STACK_ROTATION[index % STACK_ROTATION.length]
+  return { icon, color, ...projectColor(color) }
 }

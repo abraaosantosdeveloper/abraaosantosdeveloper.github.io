@@ -1,4 +1,4 @@
-/* Paleta Menta + tipografia (canvas "v2 · Trajetória"). */
+/* Paleta Menta + tipografia (canvas "v2 · Trajetória"; mono trocada por Recursive Casual). */
 :root {
   --bg: #F5F8F6;
   --surface: #FFFFFF;
@@ -30,7 +30,8 @@
   --overlay: rgba(10, 20, 15, 0.45);
 
   --sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  /* Recursive com os eixos MONO (monoespaçada) e CASL (traço arredondado, "casual") ligados */
+  --mono: 'Recursive', ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --wrap: 1120px;
   --gutter: 40px;

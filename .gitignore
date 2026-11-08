@@ -1,7 +1,9 @@
 node_modules
 dist
-.env
-.env.local
-.env.*.local
 .DS_Store
 *.log
+
+# Variáveis de ambiente: nenhuma vai para o Git (só o exemplo)
+.env
+.env.*
+!.env.example

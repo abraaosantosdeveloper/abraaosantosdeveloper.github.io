@@ -30,14 +30,14 @@ jobs:
 
       # Em Settings › Secrets and variables › Actions › Variables:
       #   VITE_DATA_SOURCE = api   e   VITE_API_URL = https://<sua-api>.up.railway.app
-      # Sem as variáveis, o build usa o .env do repositório (mock).
+      # Sem as variáveis, o build usa a API sem URL -> estados vazios (nunca o mock).
       - name: Build
         env:
           VITE_DATA_SOURCE: ${{ vars.VITE_DATA_SOURCE }}
           VITE_API_URL: ${{ vars.VITE_API_URL }}
         run: |
-          [ -z "$VITE_DATA_SOURCE" ] && unset VITE_DATA_SOURCE
-          [ -z "$VITE_API_URL" ] && unset VITE_API_URL
+          if [ -z "$VITE_DATA_SOURCE" ]; then unset VITE_DATA_SOURCE; fi
+          if [ -z "$VITE_API_URL" ]; then unset VITE_API_URL; fi
           npm run build
 
       - uses: actions/upload-pages-artifact@v3

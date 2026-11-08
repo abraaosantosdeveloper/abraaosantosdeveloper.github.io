@@ -2,6 +2,8 @@ import { mockSite } from '../data/mock'
 import { emptySite } from '../data/empty'
 
 const API_URL = String(import.meta.env.VITE_API_URL || '').replace(/\/+$/, '')
+// Padrão seguro: mock só no `npm run dev`; em produção, API (e estados vazios se ela não responder).
+// Produção NUNCA cai no mock por acidente.
 const SOURCE = String(
   import.meta.env.VITE_DATA_SOURCE || (import.meta.env.DEV ? 'mock' : 'api'),
 ).toLowerCase()
@@ -21,6 +23,7 @@ export function localSite() {
 
 /** GET /api/site. Só usado quando VITE_DATA_SOURCE=api. */
 export async function fetchSite({ signal } = {}) {
+  if (!API_URL) throw new Error('VITE_API_URL não configurada')
   const res = await fetch(`${API_URL}/api/site`, {
     signal,
     headers: { Accept: 'application/json' },
@@ -39,6 +42,7 @@ export async function sendContact({ name, email, message }) {
     await new Promise((resolve) => setTimeout(resolve, 700))
     return { ok: true, simulated: true }
   }
+  if (!API_URL) return { ok: false, reason: 'server' }
   try {
     const res = await fetch(`${API_URL}/api/contact`, {
       method: 'POST',

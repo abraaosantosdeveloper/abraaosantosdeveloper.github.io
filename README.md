@@ -1,6 +1,6 @@
 # Portfólio — front-end (Vue 3 + Vite)
 
-Implementação do design **"v2 · Trajetória"** do canvas (paleta Menta, Manrope + IBM Plex Mono):
+Implementação do design **"v2 · Trajetória"** do canvas (paleta Menta, Manrope + Recursive Mono Casual):
 introdução, stack, projetos com ícones-botão 3D, trajetória estilo Duolingo, terminal de contato,
 gaveta (celular) e painel lateral (desktop), e os **estados vazios**.
 
@@ -13,11 +13,17 @@ npm run dev        # http://localhost:5173
 
 Conferir os estados vazios sem mexer em nada: abra **http://localhost:5173/?vazio**.
 
-## De onde vêm os dados (`.env`)
+## De onde vêm os dados
+
+Nenhum `.env` vai para o Git. Sem configuração nenhuma:
+- `npm run dev` usa o **mock** (para você ver o design);
+- `npm run build` (produção) usa a **API**. Sem `VITE_API_URL`, o site fica nos **estados vazios** — nunca mostra o mock.
+
+Para mudar localmente, copie `.env.example` para `.env.local`.
 
 | `VITE_DATA_SOURCE` | O que faz |
 |---|---|
-| `mock` (padrão) | usa `src/data/mock.js` — igual ao design |
+| `mock` | usa `src/data/mock.js` — igual ao design |
 | `empty` | nada carregado: estados vazios |
 | `api` | busca `GET {VITE_API_URL}/api/site` e envia o contato para `POST /api/contact` |
 
@@ -41,6 +47,10 @@ basta adicionar `learned` ao `TimelinePhase`/`PhaseDto`.
 
 - **Stack:** a categoria cujo título começa com "Também" vira a frase do rodapé
   ("Também mexo com: …"); as demais viram colunas (desktop) ou blocos (celular).
+  Cada categoria ganha um ícone-botão 3D e uma cor pelo título (`stackCategoryStyle` em
+  `src/data/catalog.js`): Linguagens → código/menta, Back-end → servidor/azul, Dados → banco/lilás,
+  Infra/ferramentas → nuvem/âmbar, Front → globo/coral, Testes → escudo/petróleo. Outros títulos
+  recebem cores em rodízio. As tecnologias viram pílulas 3D com a bolinha na cor da categoria.
 - **Trajetória:** a "Próxima fase" (trancada) é sempre a primeira; o destaque "VOCÊ ESTÁ AQUI"
   vem de `timeline.currentPhaseId`. Período: `2025 — hoje`, `2023 — 2024` ou só o ano (marcos).
 - **Gavetas:** ≤ 760 px abre a gaveta de baixo (arraste para baixo para fechar);
