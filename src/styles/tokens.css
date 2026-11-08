@@ -1,0 +1,41 @@
+/* Paleta Menta + tipografia (canvas "v2 · Trajetória"). */
+:root {
+  --bg: #F5F8F6;
+  --surface: #FFFFFF;
+  --text: #13201A;
+  --muted: #55635B;
+  --line: #DDE5E0;
+  --accent: #0F7B5F;
+  --accent-dark: #0A5442;
+  --accent-soft: #DDF1EA;
+  --on-accent: #FFFFFF;
+
+  /* Estado vazio (cadeados) */
+  --lock-border: #B9C7BF;
+  --lock-icon: #8A9A90;
+
+  /* Terminal (sempre escuro) */
+  --term-bg: #0E1116;
+  --term-border: #262C36;
+  --term-divider: #1F252E;
+  --term-dot: #2C333D;
+  --term-text: #E6EDF3;
+  --term-dim: #8B949E;
+  --term-placeholder: #6E7681;
+  --term-input-border: #3A424E;
+  --term-accent: #4FD1A5;
+  --term-ok: #56D364;
+  --term-err: #FF7B72;
+
+  --overlay: rgba(10, 20, 15, 0.45);
+
+  --sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --wrap: 1120px;
+  --gutter: 40px;
+}
+
+@media (max-width: 760px) {
+  :root { --gutter: 20px; }
+}
