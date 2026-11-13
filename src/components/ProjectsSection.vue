@@ -1,6 +1,7 @@
 <script setup>
 import ProjectIcon from './ProjectIcon.vue'
 import ProjectsEmpty from './ProjectsEmpty.vue'
+import AppIcon from './AppIcon.vue'
 import { profile } from '../data/profile'
 import { isMobile } from '../composables/useMedia'
 
@@ -42,7 +43,7 @@ defineEmits(['open'])
                   <span v-for="t in p.tags" :key="t" class="row__tag mono">{{ t }}</span>
                 </span>
               </span>
-              <span class="row__cta only-desktop">Ver projeto →</span>
+              <span class="row__cta only-desktop">Ver projeto<AppIcon name="chevronRight" :size="18" stroke-width="2.5" /></span>
               <span class="row__chev only-mobile" aria-hidden="true">›</span>
             </button>
           </li>
@@ -94,9 +95,17 @@ defineEmits(['open'])
 .row__desc { display: block; margin-top: 4px; font-size: 16px; line-height: 1.55; color: var(--muted); }
 .row__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
 .row__tag { font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; }
-.row__cta { font-size: 15px; font-weight: 600; color: var(--accent); white-space: nowrap; }
-.row__cta, .row__chev { transition: transform .2s; }
-.row:hover .row__cta { transform: translateX(4px); }
+.row__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.row__cta :deep(svg) { flex: none; transition: transform .2s; }
+.row:hover .row__cta :deep(svg) { transform: translateX(4px); }
 
 .list__item.reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
 .list__item.reveal.is-visible { opacity: 1; transform: none; }
