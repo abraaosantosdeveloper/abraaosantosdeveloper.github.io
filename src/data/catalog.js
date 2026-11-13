@@ -29,6 +29,7 @@ export const UI_ICONS = {
   server: 'M5 4h14a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z M5 13h14a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1z M8 7.5h.01 M8 16.5h.01',
   cloud: 'M17.5 19H7a5 5 0 1 1 1.2-9.86A6 6 0 0 1 19.6 11a4 4 0 0 1-2.1 8z',
   menu: 'M4 8h16 M4 16h16',
+  chevronRight: 'M9 6l6 6-6 6',
 }
 
 const COLOR_LIST = [

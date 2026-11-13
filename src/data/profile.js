@@ -7,12 +7,12 @@ export const profile = {
   role: 'Desenvolvedor back-end',
 
   // Texto da introdução: desktop e versão curta do celular (como no design)
-  bio: 'Desenvolvedor back-end em [Cidade], Pernambuco. Lorem ipsum dolor sit amet: construo APIs, automações e integrações que tiram trabalho repetitivo das pessoas.',
-  bioShort: 'Desenvolvedor back-end em [Cidade], PE. Construo APIs, automações e integrações que tiram trabalho repetitivo das pessoas.',
+  bio: 'Desenvolvedor back-end em Recife, Pernambuco. Transformo ideias em soluções disruptivas; da ideação ao deploy, agregando valor a cada commit.',
+  bioShort: 'Desenvolvedor back-end em Recife, Pernambuco. Transformo ideias em soluções disruptivas; da ideação ao deploy!',
 
-  email: '[seu-email@exemplo.com]',
+  email: 'abraaofilipi12@gmail.com',
   github: 'https://github.com/abraaosantosdeveloper',
-  linkedin: 'https://www.linkedin.com/in/[seu-usuario]',
+  linkedin: 'https://www.linkedin.com/in/abraaosantosdev',
   cv: `${base}curriculo.pdf`, // coloque o arquivo em public/curriculo.pdf
 
   responseTime: 'até 2 dias úteis',
